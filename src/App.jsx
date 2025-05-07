@@ -1,21 +1,46 @@
-import Card from "./Cards/Cards";
-import Parent from "./Class_based_state/Parent";
-import Index from "./Props";
-import Grandparent from "./Props/Grandparent";
-import Createandreadinput from "./Tasks/Createandreadinput";
-import First from "./Tasks/Lifecyclemethods/first";
-import Nameswithcolors from "./Tasks/Nameswithcolors";
-import ShowTypedcolour from "./Tasks/Showtypedcolor";
-import Typedvalue from "./Tasks/Typedvalue";
-import UserDisplay from "./TasksonReact/Tables_Cards/Table_cards/UserDisplay";
-function App() {
-  const name="Abhiram Sai"
-  const age=30
+import { use, useState } from "react";
+import './App.css'
+import ProductViewer from "./Tasks/ProductViewer";
+function App() 
+{
+  const [count,setCount]=useState(0);
+  const [age,setAge]=useState(20);
+  const [add,setAdd]=useState(1)
+  const [input,setInput]=useState()
+  const [color,setColor]=useState()
+  const [name,setName]=useState(["Abhiram","Sai"])
+  const [colors,setColors]=useState(["Red","Blue"])
+  const handlecheck=()=>{
+    setCount(count+1);
+    setAdd((prevalue)=>prevalue+1);
+    setAge(age+5);
+
+  }
   return (
     <>
-    <UserDisplay/>
+    <ProductViewer/>
+    {/* <h1>Count:{count}</h1>
+    <h1>Age:{age}</h1>
+    <h1>Add:{add}</h1>
+    <button onClick={handlecheck}>Click</button>
+    <p>input:{input}</p>
+    <input type="text" onChnage={(event)=>setInput(event.target.value)} /> <br />
+    <h1 style={{color:color}}>color:{color}</h1>
+    <input type="text" onChange={(event)=>setColor(event.target.value)} />
+    {name.map((ele,index)=>{
+        return(
+          <>
+          <h2 style={{color:colors[index]}}>{ele}</h2>
+          </>
+        )
+      })
+    } */}
+    
     </>
   )
 }
 
 export default App;
+
+
+
